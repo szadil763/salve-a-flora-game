@@ -1,1 +1,51 @@
-<!DOCTYPE html><html><head><title>SALVE A FLORA</title><link rel="stylesheet" href="css/style.css"></head><body><h1>SALVE A FLORA</h1><script src="js/game.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#1f5f3a">
+  <meta name="description" content="Salve a Flora: plante árvores, apague queimadas, recolha o lixo e proteja a floresta brasileira.">
+  <title>SALVE A FLORA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="hud">
+      <div class="hud-row">
+        <div class="stat" title="Fase"><span class="ico">🗺️</span><span id="hud-level">1/5</span></div>
+        <div class="stat" title="Pontos"><span class="ico">⭐</span><span id="hud-score">0</span></div>
+        <div class="stat" title="Tempo restante"><span class="ico">⏱️</span><span id="hud-time">90</span></div>
+        <div class="stat" title="Água"><span class="ico">💧</span><span id="hud-water">8</span></div>
+        <div class="stat" title="Sementes"><span class="ico">🌱</span><span id="hud-seeds">6</span></div>
+        <div class="hud-buttons">
+          <button id="btn-pause" class="icon-btn" aria-label="Pausar">⏸️</button>
+          <button id="btn-sound" class="icon-btn" aria-label="Som">🔊</button>
+        </div>
+      </div>
+      <div class="hud-row bars">
+        <div class="bar-wrap" title="Cobertura da floresta">
+          <span class="bar-label">🌳 Floresta <b id="hud-cov">0%</b> / meta <b id="hud-target">40%</b></span>
+          <div class="bar"><div id="bar-cov" class="fill green"></div><div id="bar-target" class="target-mark"></div></div>
+        </div>
+        <div class="bar-wrap" title="Saúde da natureza">
+          <span class="bar-label">❤️ Saúde <b id="hud-health">100</b></span>
+          <div class="bar"><div id="bar-health" class="fill red"></div></div>
+        </div>
+      </div>
+    </header>
+
+    <main id="board-wrap">
+      <canvas id="board" aria-label="Campo do jogo"></canvas>
+    </main>
+
+    <footer id="legend">
+      Toque no <b>solo</b> para plantar 🌱 · no <b>fogo</b> para apagar 💧 · no <b>lixo</b> para recolher 🗑️ · no <b>trator</b> para expulsar 🚜
+    </footer>
+
+    <div id="overlay" class="show">
+      <div class="card" id="card"></div>
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>
